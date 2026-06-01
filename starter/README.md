@@ -1,49 +1,50 @@
 # Stardipakett — Digikolleeg AI praktikum
 
-Selles kaustas on töötoa starditükid. Kasuta neid samm-sammult: kõigepealt seadista Project, siis kontekst, siis hakka kirjutama.
+Siin on sinu töötoa stardipakett. Kasutame neid samm sammult: algul Project, siis kontekst ja seejärel saad hakata mustandeid looma. 
 
-## Mis siin on
+## Mis karbis on?
 
-| Fail | Mille jaoks |
+| Fail | Milleks see on? |
 |---|---|
-| `custom-instructions.md` | Kopeeri Claude Desktop Project'i "Custom instructions" välja. See annab agendile rolli ja reeglid. |
-| `prospects-template.csv` | Näidisandmestik 15 müügikontaktiga (Eesti SME-d, fiktiivsed). Asenda oma kontaktidega kui valmis oled. |
-| `prompt-skeleton.md` | Neli valmis-skeletti, mida promptida agenti. Põhineb RÜKV raamistikul. |
+| `custom-instructions.md` | Sinu agendi aju ja mängureeglid. Kopeeri see otse Claude Desktop Project'i "Custom instructions" välja. |
+| `prospects-template.csv` | 20 suvalist Eesti ettevõtet testimiseks. Hiljem asenda need oma päris klientidega. |
+| `prompt-skeleton.md` | Neli valmis skeletti agendi käivitamiseks. |
 
-## Soovituslik järjekord
+## Kuidas alustada?
 
-1. **Loo Claude Desktop'is uus Project.** Anna nimi (nt "Müügiassistent").
-2. **Paste `custom-instructions.md` sisu** Project'i Custom instructions välja (kogu plokk alates "Sa oled outreach-agent...").
-3. **Lae Project Knowledge'isse oma portfoolio failid:**
-   - `identity.md`
-   - `communication-style.md`
-   - `writing-samples.md` (vähemalt 2 näidet — Few-Shot Prompting'i tooraine)
-   - `team-and-relationships.md` (kui sa pead sõnumeid juba tuttavatele inimestele)
-4. **Testi `prompt-skeleton.md` Skelett 1-iga.** Vali üks rida `prospects-template.csv`-st, täida skelett, küsi agendilt mustand. Vaata, kas hääl kõlab sinu kirjutamise näidetena.
-5. **Kui hääl ei klapi**, vaata `prompt-skeleton.md` lõpuosa — "Mis siis kui mustand ei kõla õigesti" diagnostika RÜKV järgi.
+1. **Tee Claude Desktopis uus Project.** Anna talle nimi, mis ütleb, mida ta teeb (näiteks "Müügiassistent").
+2. **Kopeeri `custom-instructions.md` sisu.** Kleebi see Projecti "Custom instructions" kasti. Kõik alates sõnadest "Sa oled outreach-agent...".
+3. **Lisa oma kontekst.** Lae Project Knowledge'i alla oma portfoolio failid:
+   - `identity.md` (Kes sa oled)
+   - `communication-style.md` (Kuidas sa räägid)
+   - `writing-samples.md` (Anna talle vähemalt 2 päris näidet, muidu ta hakkab improviseerima)
+   - `team-and-relationships.md` (Kui tahad kirjutada inimestele, keda sa juba tead)
+4. **Tee esimene test.** Võta `prompt-skeleton.md` ja kasuta Skelett 1-te. Vali testandmetest üks rida, täida lüngad ja vaata, mis välja tuleb. Kas kõlab nagu sina?
+5. **Kui hääl ei klapi...** Siis vaata faili `prompt-skeleton.md` lõppu – seal on diagnostika, mis näitab sulle, kuskohas asi viltu võib minna.
 
-## Kus on portfoolio failid
+## Kust ma oma portfoolio failid saan?
 
-Töötoas ehitad need konteksti-looja Skill'iga repos `digikolleeg/isiklik-kontekst`. Kui sa veel pole, alusta sealt:
+Töötoas me ehitame need valmis. Kasutame selleks spetsiaalset konteksti-looja Skilli, mis elab siin: `digikolleeg/isiklik-kontekst`. 
 
-- ZIP-allalaadimine: https://github.com/digikolleeg/isiklik-kontekst → "Code" → "Download ZIP"
-- `skills/konteksti-looja/` kaustas on Skill ja paigaldusjuhend
+Kui sul seda veel pole, siis tee nii:
+- Lae alla siit: https://github.com/digikolleeg/isiklik-kontekst → "Code" → "Download ZIP"
+- Ava `skills/konteksti-looja/` kaust ja järgi juhendit.
 
-## Kuidas need failid omavahel klapivad
+## Kuidas need klotsid omavahel suhtlevad?
 
 ```
-   Portfoolio failid (isiklik-kontekst repo, sinu vault)
+   Sinu portfoolio (isiklik-kontekst, sinu enda failid)
             │
             ▼
    Project Knowledge (Claude Desktop)
             │
             ▼
-   Custom instructions (paneb agendi rolli) + sinu prompt (Skelett 1-4)
+   Custom instructions + sinu prompt (Skelett 1-4)
             │
             ▼
-   Mustand sinu hääles
+   Mustand sinu enda häälega
 ```
 
-## Edasiminek
+## Mis edasi?
 
-Kui see toimib ühe kontakti puhul, proovi Skelett 3 (CSV läbikäik). Kui see toimib, vaata `next-steps.md` (eraldi handout) — seal on rajamärgid, kuidas sa selle päevatöös käima paned ja kus järgmised tööriistad (Connector, Cowork, Routines) väärtust juurde annavad.
+Kui see toimib ühe kontakti puhul, proovi Skelett 3, mis võtab ette terve CSV nimekirja. Kui ka see toimib, siis loe läbi `next-steps.md`. Sealt saad selged juhised, kuidas see süsteem päriselt oma igapäevatöösse integreerida.
