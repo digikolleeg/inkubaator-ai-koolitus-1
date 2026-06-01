@@ -1,67 +1,65 @@
-# Connector setup — Claude Desktop + your vault
+# Connectori seadistamine — Claude Desktop ja sinu infobaas (vault)
 
-> **EN DRAFT — Heigo to Gemini-translate to EE before workshop.**
+See juhend aitab sul seadistada Claude Desktopi nii, et ta saaks sinu arvutis asuvaid faile (infobaasi) otse lugeda ja muuta. See on oluline, et konteksti-looja Skill saaks su portfoolio faile automaatselt ehitada – muidu pead sa Claude'i pakutud tekste ise käsitsi failidesse kleepima.
 
-This guide gets Claude Desktop reading and writing files in your vault folder, so the konteksti-looja Skill can build your portfolio files for you (instead of you copy-pasting chat output into files manually).
+**Aeg:** ~5 minutit.
+**Mida sul vaja läheb:** Paigaldatud Claude Desktop, sinu arvutis asuv kaust ja Claude Pro pakett (Filesystem Connector eeldab Pro versiooni).
 
-**Time:** ~5 minutes.
-**You need:** Claude Desktop installed, a vault folder on your Mac, Claude Pro (Filesystem Connector is a Pro feature).
+## Mis see MCP ehk Connector tegelikult on?
 
-## What MCP / Connector actually is
+Iseseisvalt näeb Claude Desktop ainult seda infot, mille sa talle otse vestlusaknasse kleepid. **Connectorid** annavad Claude'ile käed — need lubavad tal suhelda välismaailmaga, olgu selleks siis failid sinu arvutis, API-d või muud teenused. **Filesystem Connector** on spetsiifiline tööriist, mis annab Claude'ile lugemis- ja kirjutamisõiguse sinu valitud kaustale. Ülejäänud arvutile tal ligipääsu ei ole.
 
-Claude Desktop on its own can only see what you paste into the chat. **Connectors** let it reach outside the chat — to files on your computer, to APIs, to services. The **Filesystem Connector** specifically gives Claude read/write access to a folder you choose. Nothing else on your machine is visible to it.
+Kui see on seadistatud, saad öelda näiteks: *"Loe mu `identity.md` faili ja uuenda seal minu rolli kirjeldust."* Claude avab faili, loeb selle läbi ja salvestab muudatused ise. See ongi vahe AI-l, kes ainult räägib sinu tööst, ja AI-l, mis päriselt teeb sinu tööd.
 
-Once enabled, you can say things like *"read my identity.md and update the role section"* and Claude will literally open the file, read it, and write the change back. That's the difference between an AI that talks about your work and one that touches your work.
+## Samm 1 — Leia oma infobaasi kaust
 
-## Step 1 — Find your vault folder
+Sinu vault on kaust, kus asub `portfolio/` kataloog (milles on omakorda `identity.md`, `communication-style.md` jne). Kui sa tegid töötoas kõik sammud kaasa, on see sama kaust, mille sa `isiklik-kontekst` repost alla laadisid ja lahti pakkisid.
 
-Your vault is the folder containing `portfolio/` (with your `identity.md`, `communication-style.md`, etc.). If you followed the workshop, this is the folder you unzipped from the `isiklik-kontekst` repo.
-
-Typical paths:
+Tüüpilised asukohad:
 - `~/Documents/isiklik-kontekst/`
 - `~/Projects/isiklik-kontekst/`
-- `~/Desktop/isiklik-kontekst/` (if you just downloaded the ZIP today)
+- `~/Desktop/isiklik-kontekst/` (kui sa laadisid ZIP-faili just täna alla)
 
-Copy the full path — you'll paste it in Step 3.
+Kopeeri selle kausta täispikk failitee (path) — sul läheb seda 3. sammus vaja.
 
-## Step 2 — Enable Filesystem Connector
+## Samm 2 — Lülita Filesystem Connector sisse
 
-1. Open Claude Desktop
-2. Click your avatar (bottom-left) → **Settings**
-3. Find the **Connectors** section
-4. Enable **Filesystem**
+1. Ava Claude Desktop.
+2. Klõpsa vasakul all nurgas oma profiilipildile → **Settings**.
+3. Leia **Connectors** sektsioon.
+4. Lülita **Filesystem** sisse.
 
-> Note: Connectors require Claude Pro. If you don't see them, check that you're signed in and your Pro trial is active.
+> Märkus: Connectorid eeldavad Claude Pro olemasolu. Kui sa neid ei näe, veendu, et oled sisse logitud ja sinu Pro on aktiivne.
 
-## Step 3 — Point Filesystem at your vault
+## Samm 3 — Suuna Connector oma vault-kaustale
 
-1. In the Filesystem Connector settings, click **Add folder** (or similar)
-2. Navigate to your vault folder (the path from Step 1)
-3. Confirm
+1. Filesystem Connectori seadete all klõpsa **Add folder** (või midagi sarnast).
+2. Otsi üles oma vault-kaust (sammus 1 kopeeritud asukoht) ja vali see.
+3. Kinnita valik.
 
-Claude Desktop now sees only this folder. It doesn't have access to anywhere else on your machine.
+Nüüd näeb Claude Desktop ainult seda ühte kausta. Ta ei pääse ligi ühelegi teisele failile sinu arvutis.
 
-## Step 4 — Test it works
+## Samm 4 — Testime, kas töötab
 
-Open a new chat. Type:
+Ava uus vestlus ja kirjuta:
 
-> *"Loe palun fail `portfolio/identity.md` ja võta üheks lauseks kokku, kes ma olen."*
+> *"Loe palun faili `portfolio/identity.md` ja võta ühe lausega kokku, kes ma olen."*
 
-If Claude returns a summary of your identity file, the Connector is working. If you get *"I don't have access to files"* or similar, recheck Step 3.
+Kui Claude vastab kokkuvõttega sinu identity failist, siis Connector töötab. Kui saad vastuseks midagi stiilis *"I don't have access to files"*, mine tagasi ja kontrolli 3. sammu.
 
-## Step 5 — Use it with the Skill
+## Samm 5 — Kuidas seda Skilliga kasutada
 
-With Connector active, the konteksti-looja Skill can write directly to your vault. When the Skill asks where to save, say *"kirjuta see vault-faili"* — it will use the Connector to write the file in the right location, with the right frontmatter.
+Kui Connector on aktiivne, saab konteksti-looja Skill kirjutada otse sinu vault-kausta. Kui Skill küsib, kuhu andmed salvestada, vasta lihtsalt *"kirjuta see vault-faili"* — ta kasutab Connectorit, et kirjutada andmed õigesse kohta ja õiges formaadis.
 
-## If Connector doesn't work
+## Mis siis, kui Connector ei tööta?
 
-You can still use the Skill — the fallback path is: the Skill outputs each file's content as a chat code block, you copy-paste it into the file manually. Slower, but works on any plan and any setup.
+Saad Skilli ikkagi kasutada — varuvariant on lihtne: Skill annab sulle uue faili sisu vestlusaknas ja sa kopeerid selle ise õigesse faili. See on natuke aeglasem, aga töötab iga paketi ja iga seadistusega.
 
-See the Skill's README at `digikolleeg/isiklik-kontekst` under `skills/konteksti-looja/` for the manual flow.
+Manuaalse töövoo juhised leiad Skilli README-failist asukohas `digikolleeg/isiklik-kontekst` (vaata `skills/konteksti-looja/`).
 
-## Troubleshooting
+## Levinumad probleemid
 
-- **Connector option missing** → Claude Pro not active. Check your subscription / trial status.
-- **"No access to files" after setup** → folder permissions. On macOS, Claude Desktop may need Full Disk Access in System Settings → Privacy & Security.
-- **Connector sees folder but Claude won't write** → the file might be open in another app (Obsidian, VSCode). Close it, try again.
-- **You want Claude to NOT see a sub-folder** → move it outside the vault root, or add to a `.claudeignore` if supported in your version.
+- **Connectori valikut ei ole näha** → Claude Pro ei ole aktiivne. Kontrolli oma tellimuse või prooviperioodi staatust.
+- **"No access to files" pärast seadistamist** → Probleem kausta õigustega. MacOS-is võib Claude Desktop vajada failidele ligipääsuks Full Disk Access luba (System Settings → Privacy & Security alt).
+- **Connector näeb kausta, aga Claude ei suuda kirjutada** → Fail võib olla mõnes teises programmis (nt Obsidian, VSCode) avatud ja lukus. Sulge see ja proovi uuesti.
+- **Tahad, et Claude EI näeks mõnda alamkausta** → Tõsta see kaust vault'ist välja või lisa sinna `.claudeignore` fail (kui sinu Claude'i versioon seda toetab).

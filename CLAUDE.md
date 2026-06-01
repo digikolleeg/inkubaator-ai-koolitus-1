@@ -1,34 +1,28 @@
-# Workshop repo — operating notes for Claude
+# Töötoa repo — tööjuhised Claude'ile
 
-Public repo for the Digikolleeg incubator AI praktikum (2026-06). Attendee-facing.
+See on avalik repo Digikolleegi inkubaatori AI praktikumi jaoks (juuni 2026). See on suunatud osalejatele.
 
-## What this repo is
-- The Stardipakett: starter materials (CSV, prompts, custom instructions)
-- mcp-setup.md: Filesystem Connector setup guide
-- next-steps.md: Monday-morning one-pager source
-- failure-modes/: walk-throughs of common AI output problems
-- slides/: deck PDF
-- assets/: QR code + images
+## Mis siin repos on?
+- `starter/` (Stardipakett): baasmaterjalid (CSV, käsklused, kohandatud juhised).
+- `mcp-setup.md`: Filesystem Connector'i paigaldusjuhend.
+- `next-steps.md`: "Esmaspäeva hommiku" meelespea.
+- `failure-modes/`: näited, kus AI väljund läheb viltu, ja kuidas neid vigu ära tunda.
+- `slides/`: esitluse PDF.
+- `assets/`: QR-kood ja abistavad pildid.
 
-## What this repo is NOT
-- Not the planning hub (`~/Projects/workshop/` is)
-- Not the konteksti-looja Skill or the portfolio system (`digikolleeg/isiklik-kontekst` is)
-- Not Heigo's personal vault (private fork `iHeigo/digikolleeg-kontekst` is)
+## Mida see repo EI OLE
+- See ei ole konteksti-looja Skill ega portfoolio süsteem (need on `digikolleeg/isiklik-kontekst` repos).
 
-## Editing rules
-- Attendee-facing copy is Estonian. Code, file paths, technical terms in English.
-- Heigo writes the Estonian. Claude drafts in English if asked, but does not translate to Estonian — that output reads as a translation and is not usable.
-- No real prospect data from Heigo's äriregister Group A / Group B lists.
-- Don't add files speculatively. If a file isn't referenced from the deck or directly asked for, don't create it.
+## Reeglid redigeerimisel
+- Osalejatele suunatud tekstid on alati eestikeelsed. Kood, failiteed ja tehnilised terminid jäävad ingliskeelseks.
+- Ära loo faile huupi. Kui faili pole slaididel mainitud või pole otsest käsku antud, siis ära seda loo.
 
-## Regenerating Stardipakett.zip after starter/ changes
+## Kuidas `Stardipakett.zip` faili uuendada, kui `starter/` muutub
 ```bash
 cd ~/Projects/inkubaator-ai-koolitus-1
 rm -f Stardipakett.zip
 zip -r Stardipakett.zip starter/
 ```
 
-## Related repos
-- `digikolleeg/isiklik-kontekst` — Estonian fork of the personal-context-portfolio system + konteksti-looja Skill
-- Planning hub: private, at Heigo's `~/Projects/workshop/`
-- Heigo's personal vault: private fork `iHeigo/digikolleeg-kontekst`, cloned at `~/Projects/digikolleeg-kontekst/`
+## Seotud repod
+- `digikolleeg/isiklik-kontekst` — Eesti keelde kohandatud isikliku konteksti-portfoolio süsteem ja konteksti-looja Skill.

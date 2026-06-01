@@ -1,42 +1,31 @@
-# Esmaspäeva hommik — mis edasi
+# Esmaspäeva hommik — mis edasi?
 
-> **EN DRAFT — Heigo to Gemini-translate to EE before workshop. Source for the printed one-pager handout.**
+Töötoast lahkusid sa baasteadmiste, Project'i ja esimese mustandiga. Siin on plaan, kuidas seda süsteemi nüüd elus hoida.
 
-You left the workshop with a vault, a Project, and a draft. Here's how to keep it alive.
+## Sinu peamine ülesanne
 
-## The one action
+**Vii oma infobaas lõpuni.** Töötoas valmisid sinu esimesed portfoolio failid. Süsteem muutub aga oluliselt tugevamaks, kui sa täidad ka ülejäänud — eriti `team-and-relationships.md` ja `writing-samples.md`.
 
-**Finish your vault.** During the workshop you built the first few portfolio files. The system gets noticeably better with the rest — especially `team-and-relationships.md` and `writing-samples.md`.
+Kasuta konteksti-looja Skilli, nagu me töötoas tegime:
+- Ava Skill Claude Desktopis.
+- Lase tal endaga intervjuu teha, võttes ette ühe faili korraga.
+- Salvesta tulemus oma vault'i (Connector teeb seda automaatselt, või kui sul seda pole, kopeeri ja kleebi ise).
 
-Use the konteksti-looja Skill the same way we did in the workshop:
-- Open the Skill in Claude Desktop
-- Ask it to interview you for one file at a time
-- Save the output to your vault (Connector handles this automatically, or copy-paste if Connector isn't set up)
+15 minutit ühe faili kohta. Üks fail päevas — ja reede õhtuks on sul täielikult seadistatud baas.
 
-15 minutes per file. One file a day for the rest of the week = full vault by Friday.
+## Tokenite säästmise meelespea
 
-## Token-saving cheatsheet
+Sa ei pea kulutama tohutult tokeneid, et saada süsteemist maksimumi. Need kuus harjumust hoiavad su kulusid kontrolli all:
 
-You don't need to spend a lot of tokens to get a lot of value. These six habits keep your usage sustainable:
+1. **Kasuta Sonnetit.** Vali Opus ainult siis, kui vajad tõsist analüüsivõimet (õiguslik analüüs, keeruline strateegia, koodi ülevaatus).
+2. **Kasuta Project'e.** Nii laetakse sinu taustainfo sisse vaid vajadusel, mitte ei kleebita seda iga uue sõnumiga uuesti mällu.
+3. **Kasuta Skille.** Skilli juhised laetakse ainult korra käivitamisel, mitte ei jookse iga sõnumiga kaasa.
+4. **Kui fookus muutub, alusta uut vestlust.** Ära venita ühte vestlust 50 sõnumi pikkuseks — kvaliteet langeb ja tokenite kulu kasvab märgatavalt.
+5. **Mahukas töö jäta taustale.** Kas tahad uurida 50 potentsiaalse kliendi tausta? See ei ole chat'i teema, vaid taustatöö, mis tuleks lahendada eraldi kampaaniatööriistaga (Connector, n8n vms).
+6. **Hoia limiiti.** Ära kuluta oma päevast limiiti ära just enne olulist koosolekut või tööülesannet.
 
-1. **Default to Sonnet.** Use Opus only for genuinely hard reasoning (legal analysis, strategy, code review).
-2. **Use Projects.** Project Knowledge loads on demand, not re-pasted in every message.
-3. **Use Skills.** Skill instructions load once per invocation, not in every chat.
-4. **Start new chats when context drifts.** Don't keep one chat alive for 50 turns — performance degrades and tokens add up.
-5. **Heavy batch work goes to cowork or dispatch.** Researching 50 prospects? Not a chat — that's a batch job.
-6. **Don't burn budget the morning of a workshop or important meeting.** Save the daily limit for when it matters.
+## Mida teha, kui sul on vabad 20 minutit?
 
-## Setup tasks for when you have 20 minutes
+- **Seadista Connector kodus** — vaata `mcp-setup.md` faili siinsamas repos. Kui see on valmis, suudab Claude sinu failidega otse suhelda.
+- **Pro prooviperiood** — kui alustasid töötoa jaoks Pro prooviperioodi, pane endale 6. päevale kalendrisse meeldetuletus, et otsustada, kas tahad seda jätkata.
 
-- **Connector at home** — `mcp-setup.md` in this repo. Once Connector is set up, Claude can read and write your vault files directly.
-- **Pro trial** — if you started the Pro trial for the workshop, set a calendar reminder for day 6 to decide whether to keep it.
-
-## A favour
-
-If the system worked for you, the best thank-you is a warm introduction — to a colleague, a client, anyone in a small Estonian firm who would benefit from this kind of practical AI workshop.
-
-→ **https://digikolleeg.ee/et/broneerimiskutse**
-
-(QR code on the printed version.)
-
-— Heigo

@@ -1,43 +1,41 @@
 # Inkubaator AI praktikum 2026-06
 
-> **EN DRAFT — Heigo to Gemini-translate to EE before workshop.**
+See on Digikolleegi 3-tunnise AI praktikumi materjalide kodu Tallinna Ettevõtlusinkubaatori kohordile (juuni 2026).
 
-Workshop materials hub. Digikolleeg's 3-hour AI praktikum for the Tallinna Ettevõtlusinkubaator cohort, June 2026.
+Siit repositooriumist leiad kõik vajaliku — nii selle, mida kasutame töötoa ajal, kui ka selle, mida läheb vaja hiljem.
 
-Everything attendees need during the workshop and after lives in this repo.
+## Mis siin on?
 
-## What's here
-
-| Folder / file | Purpose |
+| Kaust / Fail | Milleks see on? |
 |---|---|
-| `starter/` | The Stardipakett: prompts, custom instructions, prospects CSV |
-| `failure-modes/` | Two walk-throughs of how AI output goes wrong, and how to spot + fix it |
-| `mcp-setup.md` | Step-by-step Connector setup for Claude Desktop (do this at home Monday) |
-| `next-steps.md` | Monday-morning handout source — three concrete actions + token-saving cheatsheet |
-| `slides/` | Slide deck (PDF) |
-| `assets/` | QR code + supporting images |
+| `starter/` | Stardipakett: käsklused (promptid), agendi seaded (custom instructions) ja testandmetega CSV. |
+| `failure-modes/` | Näited, kuidas AI väljund läheb viltu, ning nipid, kuidas neid vigu märgata ja parandada. |
+| `mcp-setup.md` | Samm-sammuline juhend Connectori seadistamiseks Claude Desktopis (tee seda kodus pärast töötuba). |
+| `next-steps.md` | Esmaspäeva hommiku meelespea — kolm konkreetset sammu ja tokenite säästmise nipid. |
+| `slides/` | Koolituse slaidid (PDF formaadis). |
+| `assets/` | QR koodid ja muu abistav pildimaterjal. |
 
-## How to use this repo
+## Kuidas seda repot kasutada?
 
-**During the workshop:** follow the slides. The starter/ files are pre-staged; we open them together.
+**Töötoa ajal:** Jälgime koos slaide. `starter/` kausta failid on meil juba valmis pandud ja avame need koos.
 
-**Going home:** start with `next-steps.md`. It tells you what to do Monday morning to actually put this system to work. `mcp-setup.md` is the second step (Connector setup).
+**Pärast töötuba kodus:** Alusta failist `next-steps.md`. See annab sulle selge plaani esmaspäeva hommikuks, et see süsteem päriselt oma töösse integreerida. Teine samm on `mcp-setup.md` abil Connectori seadistamine.
 
-## The bigger system this is part of
+## Suurem pilt
 
-The workshop builds on top of the `isiklik-kontekst` system — a personal vault structure that captures who you are, how you write, who you work with. The starter pack here is the minimum slice; the full system is at:
+See töötuba toetub `isiklik-kontekst` süsteemile — see on isiklik infobaas, mis kirjeldab selgelt, kes sa oled, kuidas sa kirjutad ja kellega sa töötad. Siin olev stardipakett on vaid süsteemi esimene samm; täieliku pildi ja süsteemi leiad siit:
 
 → **https://github.com/digikolleeg/isiklik-kontekst**
 
-The konteksti-looja Skill lives in that repo at `skills/konteksti-looja/`. It interviews you and generates the portfolio files. We use it in the workshop's hands-on block.
+Sama repo `skills/konteksti-looja/` kaustast leiad ka konteksti-looja Skilli. See Skill teeb sinuga intervjuu ja loob automaatselt sinu portfoolio failid. Me kasutame seda ka töötoa praktilises osas.
 
-## What to bring
+## Mida töötuppa kaasa võtta?
 
-- Laptop (charged) with **Claude Desktop** installed
-- A **Claude account** — Pro recommended (Pro trial is free)
-- Your business in your head — the system needs you, not your pre-prep
+- Sülearvuti (laetud akuga), kuhu on installitud **Claude Desktop**.
+- **Claude'i konto** — soovitavalt Pro pakett (Pro prooviperiood on tasuta).
+- Sinu äri asjad on sul niikuinii peas — süsteem vajab sinu reaalset kogemust, mitte paberile pandud eeltööd.
 
-## Contact
+## Kontakt
 
-Heigo Tolppa — heigo@digikolleeg.ee
+Heigo Tolppa — heigo@digikolleeg.ee  
 Digikolleeg OÜ — https://digikolleeg.ee
